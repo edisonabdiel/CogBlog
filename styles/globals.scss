@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300&family=Lexend+Zetta&family=Mate+SC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Overlock+SC&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Khand", sans-serif;
+  font-family: 'Overlock SC', cursive;  font-size: 1.3rem;
   &:before {
     content: "";
     content: "";
@@ -25,6 +25,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+.logo{
+  font-family: 'UnifrakturCook', cursive;
+}
+
+.nav-links{
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 1.7rem;
 }
 
 .text-shadow {
