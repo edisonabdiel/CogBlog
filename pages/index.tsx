@@ -6,21 +6,10 @@ import Image from "next/image";
 import { PostsType } from "../TypeDefs/Posts";
 // Custom Components
 import { PostCard, Categories, PostWidget } from "../components";
+// Data
+import { getPosts } from "../services";
 
-const posts: PostsType = [
-  {
-    title: "Deezy vision",
-    excerpt: "Oh my gosh!",
-    image: "https://picsum.photos/id/238/200/300",
-  },
-  {
-    title: "Itchy balls",
-    excerpt: "buuuuurn!",
-    image: "https://picsum.photos/id/237/200/300",
-  },
-];
-
-const Home: NextPage = () => {
+const Home: NextPage<{posts: PostsType[]}> = ({ posts }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -44,5 +33,14 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getStaticProps(): Promise<{ props: { posts: PostsType[] } }> {
+  const posts = (await getPosts()) || [];
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default Home;

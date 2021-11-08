@@ -1,11 +1,13 @@
+import { AuthorType } from "./Services";
+
 export interface PostsType {
         [x: string]: any;
-        title?: string,
+        title: string,
         excerpt?: string,
         content?: string,
         slug?: string,
-        featuredImage?: string,
+        featuredImage?: {url: string},
         featuredPost?: boolean,
-        author?: string,
+        author: AuthorType,
         categories?: string[],
-}
+};
