@@ -18,7 +18,7 @@ const Categories: FC<any> = () => {
         Topic
           </h3>
           {categories.map((category: CategoryType) => (
-              <Link href="/category/[id]" as={`/category/${category.slug}`} key={category.name}>
+              <Link href={`/category/${category.slug}`} key={category.name} passHref>
                   <a className="block hover:text-purple-400 ease-in-out transition duration-500 pb-3 mb-3">
                       {category.name}
                   </a>
