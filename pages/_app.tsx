@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Layout } from "../components";
+// Next modules
 import type { AppProps } from "next/app";
-import "tailwindcss/tailwind.css";
 import { ThemeProvider } from "next-themes";
+import { NextPage } from "next";
+//Custom Components
+import { Layout } from "../components";
+//Styles
+import "tailwindcss/tailwind.css";
 import "../styles/globals.scss";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp: NextPage<any> = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider attribute="media class">
+    <ThemeProvider attribute="class">
       <Layout>
         <Component {...pageProps} />
       </Layout>

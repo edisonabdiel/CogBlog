@@ -14,6 +14,7 @@
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
+    "@types/rewire": "^2.5.28",
     "autoprefixer": "^10.4.0",
     "eslint-config-next": "^12.0.3",
     "eslint-plugin-import": "^2.25.2",
@@ -22,6 +23,7 @@
     "postcss": "^8.3.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rewire": "^5.0.0",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.4.4"
   },

@@ -9,7 +9,7 @@ import { PostCard, Categories, PostWidget } from "../components";
 // Data
 import { getPosts } from "../services";
 
-const Home: NextPage<{posts: PostsType[]}> = ({ posts }) => {
+const Home: NextPage<{ posts: PostsType[] }> = ({ posts }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
