@@ -92,4 +92,20 @@ export const getSimilarPosts = async (categories: string[], slug: string): Promi
     
   const res: ServicesType = await request(graphqlAPI, query);
   return res?.postsConnection?.edges;
- };
+};
+ 
+export const getCategories = async (): Promise<any> => {
+  const query = gql`
+    query GetCategories {
+        categories {
+          name
+          slug
+        }
+      }
+      
+    `;
+    
+    
+  const res: CategoryType = await request(graphqlAPI, query);
+  return res?.categories;
+};
