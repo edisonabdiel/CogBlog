@@ -1,11 +1,11 @@
 import { useTheme } from "next-themes";
 
 export default function useDarkMode() {
-    const {theme, setTheme} = useTheme();
+    const { theme, setTheme } = useTheme();
     
     const toggleTheme = () => {
         setTheme(theme === "light" ? "dark" : "light");
     };
     
-    return [theme, toggleTheme];
+    return {theme, toggleTheme};
 }

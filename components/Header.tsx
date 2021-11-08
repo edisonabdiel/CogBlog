@@ -1,21 +1,18 @@
 import React, { FC, useContext } from "react";
+//Icons
 import { GiDarkSquad } from "react-icons/gi";
-
+//Next components
 import Link from "next/link";
+//Types
 import { CategoryType } from "../TypeDefs/Categories";
+//Custom Hooks
+import useGetCategories from "../hooks/useGetCategories";
 
-const categories: CategoryType[] = [
-  {
-    name: "All",
-    slug: "all",
-  },
-  {
-    name: "JavaScript",
-    slug: "javascript",
-  },
-];
 
 const Header: FC = () => {
+
+  const { categories } = useGetCategories();
+
   return (
     <div className="container mx-auto px-6 mb-6">
       <div className="border-b w-full inline-block boder-grey-400 py-6">
@@ -35,7 +32,7 @@ const Header: FC = () => {
         <div className="hidden md:float-left md:contents ">
           {categories.map((category) => (
             <Link href={`/categories/${category.slug}`} key={category.slug} passHref>
-              <span className="md:float-right mt-2 align-middle text-white ml-4 font-light cursor-pointer  nav-links transition ease-in-out duration-700 hover:text-purple-400 mt-6">
+              <span className="md:float-right mt-2 align-middle text-white ml-4 font-light cursor-pointer transform hover:-translate-y-1 nav-links transition ease-in-out duration-700 hover:text-purple-400 mt-6">
                 {category.name}
               </span>
             </Link>

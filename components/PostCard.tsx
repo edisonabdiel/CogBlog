@@ -13,8 +13,6 @@ import moment from "moment";
 const PostCard: FC<PostCardType> = ({ post }) => {
   const data: PostsType = post?.node;
 
-  console.log(data);
-
   return (
     <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
@@ -25,7 +23,7 @@ const PostCard: FC<PostCardType> = ({ post }) => {
           layout="fill"
         />
       </div>
-      <h1 className="transition duration-500 text-center mb-7 cursor-pointer hover:text-purple-400 ease-in-out text-3xl font-light">
+      <h1 className="transition duration-500 text-center mb-7 cursor-pointer hover:text-purple-400 ease-in-out text-3xl font-light transform hover:-translate-y-1">
         <Link href={`/post/${data.slug}`}>
         {data.title}
         </Link>
