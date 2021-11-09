@@ -1,8 +1,8 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 //Next components
 import Link from "next/link";
 //Types
-import { CategoryType } from "../TypeDefs/Categories";
+import { CategoryType } from "../TypeDefs";
 //Custom Hooks
 import useGetCategories from "../hooks/useGetCategories";
 

@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 //Types
-import { PostsType } from "../TypeDefs/Posts";
-import { PostCardType } from "../TypeDefs/PostCard";
+import { PostsType, PostType } from "../TypeDefs";
 //Next modules
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +9,7 @@ import { GiSly } from "react-icons/gi";
 // Middlewear
 import moment from "moment";
 
-const PostCard: FC<PostCardType> = ({ post }) => {
+const PostCard: FC<PostType> = ({ post }) => {
   const data: PostsType = post?.node;
 
   return (

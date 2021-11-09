@@ -1,21 +1,19 @@
-// Next modules
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "next-themes";
-import { NextPage } from "next";
-//Custom Components
-import { Layout } from "../components";
-//Styles
-import "tailwindcss/tailwind.css";
-import "../styles/globals.scss";
+import React from 'react';
+import { ThemeProvider } from 'next-themes';
 
-const MyApp: NextPage<any> = ({ Component, pageProps }: AppProps) => {
+
+import '../styles/globals.scss';
+import { HeadComponent, Layout } from '../components';
+
+function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
       <Layout>
+        <HeadComponent />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
   );
-};
+}
 
 export default MyApp;

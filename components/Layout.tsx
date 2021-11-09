@@ -1,13 +1,11 @@
 import React, { FC } from 'react';
-import { Header } from './';
+import Header from './Header';
 
-const Layout: FC = ({children}: {children: React.ReactNode}) => {
-    return (
-        <>
-            <Header />
-            {children}
-        </>
-    )
-}
+const Layout: FC = ({ children }: {children: React.ReactNode}) => (
+  <>
+    <Header />
+    {children}
+  </>
+);
 
 export default Layout;

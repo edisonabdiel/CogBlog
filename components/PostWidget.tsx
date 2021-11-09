@@ -1,30 +1,29 @@
-import React, { FC, useState, useEffect } from "react";
-//Middleware
-import moment from "moment";
-//Next components
-import Link from "next/link";
-import Image from "next/image";
-//Types
-import { CategoryType } from "../TypeDefs/Categories";
-//Services
-import { getRecentPosts, getSimilarPosts } from "../services";
-import { PostsType } from "../TypeDefs/Posts";
+import React, { useState, useEffect, FC } from 'react';
+import Image from 'next/image';
+import moment from 'moment';
+import Link from 'next/link';
 
-//TODO: Create type for PostWidget
+import { grpahCMSImageLoader } from '../util';
+import { getSimilarPosts, getRecentPosts } from '../services';
+import { PostsType } from '../TypeDefs';
 
-const PostWidget: FC<any> = ({ categories, slug }) => {
+const PostWidget: FC<{categories: string[], slug: string}> = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug).then((res) => setRelatedPosts(res));
+      getSimilarPosts(categories, slug).then((result) => {
+        setRelatedPosts(result);
+      });
     } else {
-      getRecentPosts().then((res) => setRelatedPosts(res));
+      getRecentPosts().then((result) => {
+        setRelatedPosts(result);
+      });
     }
   }, [slug]);
 
   return (
-    <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-normal border-b pb-4">
         {slug ? "Related Posts" : "Recent Posts"}
       </h3>
@@ -35,6 +34,7 @@ const PostWidget: FC<any> = ({ categories, slug }) => {
               alt={post.title}
               height={60}
               width={60}
+              loader={grpahCMSImageLoader}
               unoptimized
               className="align-middle rounded-full"
               src={post.featuredImage.url}

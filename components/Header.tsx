@@ -1,17 +1,17 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 //Icons
 import { GiDarkSquad } from "react-icons/gi";
 //Next components
 import Link from "next/link";
 //Types
-import { CategoryType } from "../TypeDefs/Categories";
+import { CategoryType } from "../TypeDefs";
 //Custom Hooks
 import useGetCategories from "../hooks/useGetCategories";
-
 
 const Header: FC = () => {
 
   const { categories } = useGetCategories();
+
 
   return (
     <div className="container mx-auto px-6 mb-6">
@@ -21,7 +21,7 @@ const Header: FC = () => {
             <div>
               <a className="text-gray-300 cursor-pointer hover:text-purple-400 nav-links transition ease-in-out duration-700">
               <GiDarkSquad />
-                COCK
+                COG
               </a>
               <span className="font-extrabold nav-links hover:text-purple-400 transition ease-in-out duration-700 cursor-pointer">
                 Blog
@@ -31,7 +31,7 @@ const Header: FC = () => {
         </div>
         <div className="hidden md:float-left md:contents ">
           {categories.map((category) => (
-            <Link href={`/categories/${category.slug}`} key={category.slug} passHref>
+            <Link href={`/category/${category.slug}`} key={category.slug} passHref>
               <span className="md:float-right mt-2 align-middle text-white ml-4 font-light cursor-pointer transform hover:-translate-y-1 nav-links transition ease-in-out duration-700 hover:text-purple-400 mt-6">
                 {category.name}
               </span>
