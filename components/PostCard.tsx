@@ -8,6 +8,8 @@ import Link from "next/link";
 import { GiSly } from "react-icons/gi";
 // Middlewear
 import moment from "moment";
+//Uitilities
+import { grpahCMSImageLoader } from '../util'
 
 const PostCard: FC<PostType> = ({ post }) => {
   const data: PostsType = post?.node;
@@ -33,6 +35,7 @@ const PostCard: FC<PostType> = ({ post }) => {
             src={data.author.photo.url}
             alt={data.author.name}
             unoptimized
+            loader={grpahCMSImageLoader}
             height={30}
             width={30}
             className="align-middle rounded-full"
@@ -42,7 +45,7 @@ const PostCard: FC<PostType> = ({ post }) => {
         <div className="transition duration-500 font-medium text-gray-500 hover:text-red-700 ease-in-out">
           <GiSly />
         </div>
-          <span className="ml-8 font-medium text-gray-600">
+          <span className="ml-8 align-middle font-medium text-gray-600">
             {moment(data.createdAt).format('MM DD, YYYY')}
           </span>
       </div>
