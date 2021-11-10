@@ -110,6 +110,7 @@ const PostDetail: FC<PostType> = ({ post }) => {
             </div>
           </div>
           <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+           {/* @ts-ignore */}
           {post.content.raw.children.map((typeObj, index) => {
             const children: ContentType = typeObj.children.map((item, itemindex) =>
               getContentFragment(itemindex, item.text, item)
