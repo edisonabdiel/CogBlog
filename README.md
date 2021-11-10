@@ -53,10 +53,10 @@ CogBlog is a modern and fully fuctional blog for fictional characters who are al
 
 ## Why Like This?
 
-The app was initialised from scratch in order to asure a smooth integration between React - Next - TypeScript - TailwindCSS. 
+The app was initialised completely from scratch in order to ensure a smooth integration between React - Next - TypeScript - TailwindCSS. 
 Also built with a GraphQL API to allow for a more dynamic and scalable experience which integrates perfectly with the GraphCMS API. 
 
-The UI is meant to be minimalistic yet engaging was built using SASS for global styles and TailwindCSS to allow grat control and autonomy over the layout of the app 
+The UI is meant to be minimalistic yet engaging and intuitive was built using SASS for global styles and TailwindCSS to allow grat control and autonomy over the layout of the app 
 and also the design and feel of the elements within it.
 
 <p>all characters and posts are fictional and used for demo porpuses only</p>
