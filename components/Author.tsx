@@ -19,7 +19,7 @@ const Author: FC<{author: AuthorType}> = ({ author }) => (
         src={author.photo.url}
       />
     </div>
-    <h3 className="text-gray-200  mt-4 mb-4 text-xl font-bold">{author.name}</h3>
+    <h3 className="text-gray-200 titles-names mt-4 mb-4 text-xl font-bold">{author.name}</h3>
     <p className="text-gray-200  text-ls">{author.bio}</p>
   </div>
 );

@@ -24,7 +24,7 @@ const PostWidget: FC<{categories?: string[], slug?: string}> = ({ categories, sl
 
   return (
     <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-normal border-b pb-4">
+      <h3 className="text-xl mb-8 font-normal border-b pb-4 titles-names">
         {slug ? "Related Posts" : "Recent Posts"}
       </h3>
       {relatedPosts?.map((post: PostsType) => (

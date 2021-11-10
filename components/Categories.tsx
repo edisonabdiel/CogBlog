@@ -14,8 +14,8 @@ const Categories: FC<CategoriesType> = () => {
 
   return (
     <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-normal border-b pb-4">
-        Topic
+      <h3 className="text-xl mb-8 font-normal border-b titles-names pb-4">
+        Topics
           </h3>
           {categories.map((category: CategoryType) => (
               <Link href={`/category/${category.slug}`} key={category.name} passHref>

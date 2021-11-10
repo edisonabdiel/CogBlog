@@ -40,7 +40,7 @@ const PostDetail: FC<PostType> = ({ post }) => {
         );
       case "paragraph":
         return (
-          <p key={index} className="mb-8">
+          <p key={index} className="mb-8 post-content">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -96,7 +96,7 @@ const PostDetail: FC<PostType> = ({ post }) => {
                 unoptimized
                 loader={grpahCMSImageLoader}
               />
-              <p className="inline align-middle text-gray-600 ml-2 font-medium text-lg">
+              <p className="inline align-middle text-gray-600 ml-2 font-medium text-sm titles-names">
                 {post.author.name}
               </p>
             </div>

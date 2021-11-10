@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Overlock+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kufam&family=Libre+Barcode+39+Text&family=Metal+Mania&family=Overlock+SC&display=swap');
 
 html,
 body {
@@ -27,13 +27,20 @@ body {
   }
 }
 
-.logo{
-  font-family: 'UnifrakturCook', cursive;
-}
-
 .nav-links{
   font-family: 'Libre Barcode 39 Text', cursive;
   font-size: 1.7rem;
+}
+
+.titles-names{
+  font-family: 'Metal Mania', cursive;
+  font-size: 1.5rem;
+}
+
+.post-content{
+  font-family: 'Kufam', sans-serif;
+  font-size: 1.0rem;
+  font-weight: 200;
 }
 
 .text-shadow {
