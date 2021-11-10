@@ -1,7 +1,7 @@
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
   },
@@ -11,7 +11,7 @@ module.exports = {
         '2/3': '66.666667%',
       },
     },
-    ["responsive"]: ["dark"],
+    ['responsive']: ['dark"'],
   },
   plugins: [],
 }
