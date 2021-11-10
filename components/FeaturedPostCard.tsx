@@ -7,7 +7,7 @@ import moment from 'moment';
 //Utilities
 import { grpahCMSImageLoader } from '../util'
 //Types
-import { PostsType, FeaturedPostType } from '../TypeDefs';
+import { FeaturedPostType } from '../TypeDefs';
 
 const FeaturedPostCard: FC<FeaturedPostType> = ({ post }) => (
   <div className="relative h-72 transform hover:-translate-x-2 transition ease-in-out duration-700">
