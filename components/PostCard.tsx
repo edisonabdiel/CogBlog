@@ -15,7 +15,7 @@ const PostCard: FC<PostType> = ({ post }) => {
   const data: PostsType = post?.node;
 
   return (
-    <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-gray-800 bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
         <Image
           src={data.featuredImage?.url}
