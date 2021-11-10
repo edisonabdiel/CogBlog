@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+//Middlewear
 import moment from 'moment';
 import parse from 'html-react-parser';
-
+//Services
 import { getComments } from '../services';
+import { CommentType } from '../TypeDefs';
 
-const Comments = ({ slug }) => {
-  const [comments, setComments] = useState([]);
+const Comments: FC<{slug: string, comments: CommentType}> = ({ slug }) => {
+  const [comments, setComments] = useState<CommentType[]>([]);
 
   useEffect(() => {
     getComments(slug).then((result) => {
