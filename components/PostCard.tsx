@@ -40,7 +40,7 @@ const PostCard: FC<PostType> = ({ post }) => {
             width={30}
             className="align-middle rounded-full"
           />
-          <p className="inline align-middle text-gray-400 ml-2 font-medium text-gray-600">{data.author.name}</p>
+          <p className="inline align-middle text-gray-400 ml-2 font-medium text-gray-600 titles-names">{data.author.name}</p>
         </div>
         <div className="transition duration-500 text-2xl font-medium text-gray-500 hover:text-red-700 ease-in-out">
           <GiSly />
