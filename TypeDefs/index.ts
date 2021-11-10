@@ -2,13 +2,13 @@ import { Key } from "react";
 
 export interface PostsType {
     [x: string]: any;
-    title: string;
+    title?: string;
     excerpt?: string;
     content?: string,
     slug?: string,
     featuredImage?: {url: string},
     featuredPost?: boolean,
-    author: AuthorType,
+    author?: AuthorType,
     categories?: string[],
 };
 
@@ -82,3 +82,9 @@ export interface AdjacentPostType {
     post: PostsType;
     position: string;
 }
+
+export interface FeaturedPostType {
+    [x: string]: any;
+    post?: PostsType;
+
+ }
