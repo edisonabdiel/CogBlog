@@ -13,7 +13,7 @@ const Categories: FC<CategoriesType> = () => {
     const { categories } = useGetCategories();
 
   return (
-    <div className="bg-gray-800 bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-normal border-b titles-names pb-4">
         Topics
           </h3>
