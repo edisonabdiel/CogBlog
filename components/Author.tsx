@@ -3,6 +3,7 @@ import React, {FC} from 'react';
 import Image from 'next/image';
 //Utilities
 import { grpahCMSImageLoader } from '../util';
+//Types
 import { AuthorType } from '../TypeDefs';
 
 const Author: FC<{author: AuthorType}> = ({ author }) => (
@@ -18,8 +19,8 @@ const Author: FC<{author: AuthorType}> = ({ author }) => (
         src={author.photo.url}
       />
     </div>
-    <h3 className="text-white mt-4 mb-4 text-xl font-bold">{author.name}</h3>
-    <p className="text-white text-ls">{author.bio}</p>
+    <h3 className="text-gray-200  mt-4 mb-4 text-xl font-bold">{author.name}</h3>
+    <p className="text-gray-200  text-ls">{author.bio}</p>
   </div>
 );
 
