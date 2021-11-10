@@ -61,7 +61,7 @@ export interface CommentType {
     name: string;
     email: string;
     comment?: string;
-    storeData?: boolean | string;
+    storeData?: any;
 }
 
 export interface ContentType {

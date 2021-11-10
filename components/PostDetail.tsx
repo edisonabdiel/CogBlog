@@ -12,7 +12,7 @@ import { grpahCMSImageLoader } from "../util";
 //TODO
 
 const PostDetail: FC<PostType> = ({ post }) => {
-  const getContentFragment: ContentFuncType = (index, text, obj, type) => {
+  const getContentFragment = (index, text, obj, type?) => {
     let modifiedText = text;
 
     if (obj) {
