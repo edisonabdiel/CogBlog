@@ -2,13 +2,13 @@ import React, { FC } from "react";
 //Next components
 import Link from "next/link";
 //Types
-import { CategoryType } from "../TypeDefs";
+import { CategoriesType, CategoryType } from "../TypeDefs";
 //Custom Hooks
 import useGetCategories from "../hooks/useGetCategories";
 
 //TODO: Add type for categories
 
-const Categories: FC<CategoryType> = () => {
+const Categories: FC<CategoriesType> = () => {
   
     const { categories } = useGetCategories();
 

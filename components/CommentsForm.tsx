@@ -3,7 +3,7 @@ import React, { useState, useEffect, FC } from 'react';
 import { submitComment } from '../services';
 import { CommentType } from '../TypeDefs';
 
-const CommentsForm: FC<{slug: string, formData: CommentType}> = ({ slug }) => {
+const CommentsForm: FC<{slug: string, formData?: CommentType}> = ({ slug }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);

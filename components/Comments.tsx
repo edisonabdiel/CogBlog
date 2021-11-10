@@ -6,7 +6,7 @@ import parse from 'html-react-parser';
 import { getComments } from '../services';
 import { CommentType } from '../TypeDefs';
 
-const Comments: FC<{slug: string, comments: CommentType}> = ({ slug }) => {
+const Comments: FC<{slug: string, comments?: CommentType}> = ({ slug }) => {
   const [comments, setComments] = useState<CommentType[]>([]);
 
   useEffect(() => {

@@ -21,8 +21,8 @@ export interface AuthorType {
 
 export interface CategoriesType {
     [x: string]: any;
-    name: string,
-    slug: string,
+    name?: string,
+    slug?: string,
 };
 
 export interface CategoryType {
@@ -70,7 +70,7 @@ export interface ContentType {
     text?: {string: string};
     obj?: any;
     type?: string | undefined;
-    (someArg: string): any | undefined;
+    (someArg: string): any | void;
 }
 
 export type ContentFuncType = (content: ContentType) => any; {
