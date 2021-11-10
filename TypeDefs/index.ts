@@ -29,7 +29,7 @@ export interface CategoryType {
     [x: string]: any;
     name: string;
     slug: string;
-    categories?: string[];
+    categories?: {category: CategoriesType} | string[];
 };
 
 export interface ServicesType {
@@ -75,4 +75,10 @@ export interface ContentType {
 
 export type ContentFuncType = (content: ContentType) => any; {
 
+}
+
+export interface AdjacentPostType {
+    [x: string]: any;
+    post: PostsType;
+    position: string;
 }

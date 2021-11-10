@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { FC , useState, useEffect } from 'react';
+//Custom Components
 import { AdjacentPostCard } from '../components';
+//Services
 import { getAdjacentPosts } from '../services';
 
-const AdjacentPosts = ({ createdAt, slug }) => {
+const AdjacentPosts: FC<{ createdAt: string, slug: string}> = ({ createdAt, slug }) => {
   const [adjacentPost, setAdjacentPost] = useState(null);
   const [dataLoaded, setDataLoaded] = useState(false);
 

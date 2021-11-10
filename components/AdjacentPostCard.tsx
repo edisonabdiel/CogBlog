@@ -4,9 +4,9 @@ import Link from 'next/link';
 //Middlewear
 import moment from 'moment';
 //Types
-import { PostsType } from '../TypeDefs';
+import { AdjacentPostType } from '../TypeDefs';
 
-const AdjacentPostCard: FC<PostsType> = ({ post, position }) => (
+const AdjacentPostCard: FC<AdjacentPostType> = ({ post, position }) => (
   <>
     <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
     <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72" />
@@ -16,7 +16,7 @@ const AdjacentPostCard: FC<PostsType> = ({ post, position }) => (
     </div>
     <Link href={`/post/${post.slug}`} passHref><span className="z-10 cursor-pointer absolute w-full h-full" /></Link>
     {position === 'LEFT' && (
-      <div className="absolute arrow-btn bottom-5 align-items text-center py-3 cursor-pointer bg-purple-500 left-4 rounded-full">
+      <div className="absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-purple-500 left-4 rounded-full">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-200 w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
