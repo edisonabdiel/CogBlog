@@ -53,7 +53,13 @@ CogBlog is a modern and fully fuctional blog for fictional characters who are al
 
 ## Getting Started
 
-First: Install the dependencies yarn add install
+Install the dependencies 
+
+```bash
+npm install
+# or
+yarn add install
+```
 
 Run the development server:
 
@@ -63,7 +69,13 @@ npm run dev
 yarn dev
 ```
 
-Then: [Run the build](yarn build)) 
+Build 
+
+```bash
+npm run build
+# or
+yarn build
+```
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
