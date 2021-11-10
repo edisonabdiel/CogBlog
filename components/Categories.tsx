@@ -8,7 +8,7 @@ import useGetCategories from "../hooks/useGetCategories";
 
 //TODO: Add type for categories
 
-const Categories: FC<any> = () => {
+const Categories: FC<CategoryType> = () => {
   
     const { categories } = useGetCategories();
 

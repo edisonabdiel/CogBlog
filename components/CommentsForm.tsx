@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
+//Services
 import { submitComment } from '../services';
+import { CommentType } from '../TypeDefs';
 
-const CommentsForm = ({ slug }) => {
+const CommentsForm: FC<any> = ({ slug }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [formData, setFormData] = useState({ name: null, email: null, comment: null, storeData: false });
-
+  const [formData, setFormData] = useState<CommentType>({ name: null, email: null, comment: null, storeData: false });
+  //Stores comment-user data in local storage
   useEffect(() => {
     setLocalStorage(window.localStorage);
-    const initalFormData = {
+    const initalFormData: CommentType = {
       name: window.localStorage.getItem('name'),
       email: window.localStorage.getItem('email'),
       storeData: window.localStorage.getItem('name') || window.localStorage.getItem('email'),
@@ -75,8 +77,8 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
+    <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">
+      <h3 className="text-xl text-gray-200 mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea value={formData.comment} onChange={onInputChange} className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" name="comment" placeholder="Comment" />
       </div>
@@ -91,8 +93,8 @@ const CommentsForm = ({ slug }) => {
         </div>
       </div>
       {error && <p className="text-xs text-red-500">All fields are mandatory</p>}
-      <div className="mt-8">
-        <button type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Post Comment</button>
+      <div className="mt-8 text-center">
+        <button type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-purple-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Post Comment</button>
         {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">Comment submitted for review</span>}
       </div>
     </div>

@@ -50,3 +50,11 @@ export interface PostWidgetType {
 export interface PostType {
     post: PostsType
 }
+
+export interface CommentType {
+    [x: string]: any;
+    name: string;
+    email: string;
+    comment?: string;
+    storeData?: boolean | string;
+}
