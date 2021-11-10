@@ -23,7 +23,7 @@ const PostCard: FC<PostType> = ({ post }) => {
         />
       </div>
       <h1 className="transition duration-500 text-center mb-7 cursor-pointer hover:text-purple-400 ease-in-out text-3xl font-light transform hover:-translate-y-1">
-        <Link href={`/post/${data.slug}`}>
+        <Link href={`/post/${data.slug}`} passHref>
         {data.title}
         </Link>
       </h1>

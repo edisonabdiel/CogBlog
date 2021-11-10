@@ -7,7 +7,7 @@ import { grpahCMSImageLoader } from '../util';
 import { getSimilarPosts, getRecentPosts } from '../services';
 import { PostsType } from '../TypeDefs';
 
-const PostWidget: FC<{categories: string[], slug: string}> = ({ categories, slug }) => {
+const PostWidget: FC<{categories?: string[], slug?: string}> = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
