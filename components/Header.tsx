@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 //Icons
-import { GiDarkSquad } from "react-icons/gi";
+import { GiRooster} from "react-icons/gi";
 //Next components
 import Link from "next/link";
 //Types
@@ -20,8 +20,8 @@ const Header: FC = () => {
           <Link href="/" passHref>
             <div>
               <a className="text-gray-300 cursor-pointer hover:text-purple-400 nav-links transition ease-in-out duration-700">
-              <GiDarkSquad />
-                COG
+              <GiRooster />
+                COCK
               </a>
               <span className="font-extrabold nav-links hover:text-purple-400 transition ease-in-out duration-700 cursor-pointer">
                 Blog

@@ -1,3 +1,5 @@
+import { Key } from "react";
+
 export interface PostsType {
     [x: string]: any;
     title: string;
@@ -48,7 +50,10 @@ export interface PostWidgetType {
 }
 
 export interface PostType {
-    post: PostsType
+    post: PostsType;
+    content?: {
+         raw?: [string] | [];
+     }
 }
 
 export interface CommentType {
@@ -57,4 +62,17 @@ export interface CommentType {
     email: string;
     comment?: string;
     storeData?: boolean | string;
+}
+
+export interface ContentType {
+    [x: string]: any;
+    index?: Key;
+    text?: {string: string};
+    obj?: any;
+    type?: string | undefined;
+    (someArg: string): any | undefined;
+}
+
+export type ContentFuncType = (content: ContentType) => any; {
+
 }

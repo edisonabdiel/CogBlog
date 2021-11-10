@@ -42,7 +42,7 @@ const PostCard: FC<PostType> = ({ post }) => {
           />
           <p className="inline align-middle text-gray-400 ml-2 font-medium text-gray-600">{data.author.name}</p>
         </div>
-        <div className="transition duration-500 font-medium text-gray-500 hover:text-red-700 ease-in-out">
+        <div className="transition duration-500 text-2xl font-medium text-gray-500 hover:text-red-700 ease-in-out">
           <GiSly />
         </div>
           <span className="ml-8 align-middle font-medium text-gray-600">
