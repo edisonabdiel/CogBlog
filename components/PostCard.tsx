@@ -32,7 +32,7 @@ const PostCard: FC<PostType> = ({ post }) => {
         </Link>
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full ">
-        <div className="flex items-center justify-cnter mb-4 lg:mb-0 w-full lg:w-auto mr-8">
+        <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
           <Image
             src={data.author.photo.url}
             alt={data.author.name}
@@ -42,14 +42,14 @@ const PostCard: FC<PostType> = ({ post }) => {
             width={30}
             className="align-middle rounded-full"
           />
-          <p className="inline align-middle text-gray-400 ml-2 font-medium text-gray-600 titles-names">{data.author.name}</p>
+          <p className="inline align-middle text-gray-400 ml-2 font-light text-lg titles-names">{data.author.name}</p>
         </div>
-        <div className="transition duration-500 text-sm font-medium text-gray-500 hover:text-red-700 ease-in-out">
-          <GiSly />
-          <span className="align-middle text-sm text-gray-600">
+        <div className="transition duration-500 text-xl font-medium text-gray-500 hover:text-red-700 ease-in-out">
+          <GiSly className="h-6 w-6 inline" />
+        </div>
+          <span className="ml-6 align-middle text-md text-gray-600">
             {moment(data.createdAt).format('MM DD, YYYY')}
           </span>
-        </div>
       </div>
       <p className="text-center text-lg text-gray-400 font-normal px-4 lg:px-20 mb-4">{data.excerpt}</p>
       <div className="text-center">
