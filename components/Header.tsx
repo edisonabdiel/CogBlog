@@ -19,7 +19,7 @@ const Header: FC = () => {
         <div className="md:float-left block">
           <Link href="/" passHref>
             <div>
-              <a className="text-gray-300 cursor-pointer hover:text-purple-400 nav-links transition ease-in-out duration-700">
+              <a className="text-gray-300 cursor-pointer hover:text-purple-400 transform nav-links transition ease-in-out duration-700">
               <GiRooster />
                 COCK
               </a>
@@ -32,7 +32,7 @@ const Header: FC = () => {
         <div className="hidden md:float-left md:contents ">
           {categories.map((category) => (
             <Link href={`/category/${category.slug}`} key={category.slug} passHref>
-              <span className="md:float-right mt-2 align-middle text-white ml-4 font-light cursor-pointer transform hover:-translate-y-1 nav-links transition ease-in-out duration-700 hover:text-purple-400 mt-6">
+              <span className="md:float-right mt-2 align-middle text-white ml-4 font-light cursor-pointer transform hover:scale-125 hover:-translate-y-1 nav-links transition ease-in-out duration-700 hover:text-purple-400 mt-6">
                 {category.name}
               </span>
             </Link>

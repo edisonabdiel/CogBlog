@@ -6,6 +6,7 @@ import { CategoriesType, CategoryType } from "../TypeDefs";
 //Custom Hooks
 import useGetCategories from "../hooks/useGetCategories";
 
+
 //TODO: Add type for categories
 
 const Categories: FC<CategoriesType> = () => {
