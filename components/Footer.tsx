@@ -4,8 +4,8 @@ import { GiRooster } from "react-icons/gi";
 import { FaGithubAlt } from "react-icons/fa";
 
 const Footer: FC<any> = () => (
-    <div className="container mx-auto mb-6 inline-block align-top">
-      <div className="flex justify-center text-3xl pb-2">
+  <div className="container mx-auto mb-6 inline-block align-top">
+      <div className="flex justify-center text-2xl pb-2 cursor-pointer hover:text-purple-400 hover:scale-150 hover:-translate-y-1 transition ease-in-out duration-700">
         <GiRooster />
       </div>
       <div className="text-center text-sm text-gray-200 font-thin">

@@ -20,6 +20,8 @@ const PostCard: FC<PostType> = ({ post }) => {
         <Image
           src={data.featuredImage?.url}
           alt={data.title}
+          loader={grpahCMSImageLoader}
+          unoptimized
           className="object-top absolute h-80 w-full object-cover shadow-lg pb-68 mb-6 rounded-lg"
           layout="fill"
         />
@@ -29,7 +31,7 @@ const PostCard: FC<PostType> = ({ post }) => {
         {data.title}
         </Link>
       </h1>
-      <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
+      <div className="block lg:flex text-center items-center justify-center mb-8 w-full ">
         <div className="flex items-center justify-cnter mb-4 lg:mb-0 w-full lg:w-auto mr-8">
           <Image
             src={data.author.photo.url}
@@ -42,12 +44,12 @@ const PostCard: FC<PostType> = ({ post }) => {
           />
           <p className="inline align-middle text-gray-400 ml-2 font-medium text-gray-600 titles-names">{data.author.name}</p>
         </div>
-        <div className="transition duration-500 text-2xl font-medium text-gray-500 hover:text-red-700 ease-in-out">
+        <div className="transition duration-500 text-sm font-medium text-gray-500 hover:text-red-700 ease-in-out">
           <GiSly />
-        </div>
-          <span className="ml-8 align-middle font-medium text-gray-600">
+          <span className="align-middle text-sm text-gray-600">
             {moment(data.createdAt).format('MM DD, YYYY')}
           </span>
+        </div>
       </div>
       <p className="text-center text-lg text-gray-400 font-normal px-4 lg:px-20 mb-4">{data.excerpt}</p>
       <div className="text-center">
