@@ -21,7 +21,7 @@ const Header: FC = () => {
             <div>
               <a className="text-gray-300 cursor-pointer hover:text-purple-400 transform nav-links transition ease-in-out duration-700">
               <GiRooster />
-                COCK
+                COG
               </a>
               <span className="font-extrabold nav-links hover:text-purple-400 transition ease-in-out duration-700 cursor-pointer">
                 Blog
