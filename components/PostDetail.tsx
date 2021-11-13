@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 //Icons
-import { GiDeathNote, GiDarkSquad , GiDeadlyStrike } from "react-icons/gi";
+import { GiDeathNote } from "react-icons/gi";
 //Middleware
 import moment from "moment";
-import { ContentType, PostType, ContentFuncType } from "../TypeDefs";
+import { ContentType, PostType } from "../TypeDefs";
 //Next Components
 import Image from "next/image";
 //Utilities
@@ -28,13 +28,14 @@ const PostDetail: FC<PostType> = ({ post }) => {
         modifiedText = <u key={index}>{text}</u>;
       }
     }
+   
 
     switch (type) {
       case "heading-three":
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </h3>
         );
@@ -42,7 +43,7 @@ const PostDetail: FC<PostType> = ({ post }) => {
         return (
           <p key={index} className="mb-8 post-content">
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </p>
         );
@@ -50,7 +51,7 @@ const PostDetail: FC<PostType> = ({ post }) => {
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </h4>
         );

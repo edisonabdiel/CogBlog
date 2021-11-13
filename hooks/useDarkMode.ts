@@ -8,4 +8,4 @@ export default function useDarkMode() {
     };
     
     return {theme, toggleTheme};
-}
+};

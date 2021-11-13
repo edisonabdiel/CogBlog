@@ -3,8 +3,6 @@ import React, { FC } from "react";
 import { GiRooster} from "react-icons/gi";
 //Next components
 import Link from "next/link";
-//Types
-import { CategoryType } from "../TypeDefs";
 //Custom Hooks
 import useGetCategories from "../hooks/useGetCategories";
 
