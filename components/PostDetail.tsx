@@ -11,8 +11,9 @@ import { grpahCMSImageLoader } from "../util";
 
 const PostDetail: FC<PostType> = ({ post }) => {
   const getContentFragment = (index, text, obj, type?) => {
+    // mutable var to hold the final content
     let modifiedText = text;
-
+    //loop through the content and style it accordingly
     if (obj) {
       if (obj.bold) {
         modifiedText = <b key={index}>{text}</b>;
@@ -26,7 +27,8 @@ const PostDetail: FC<PostType> = ({ post }) => {
         modifiedText = <u key={index}>{text}</u>;
       }
     }
-   
+     console.log(obj)
+   //checks content type and returns the appropriate element/component
     switch (type) {
       case "heading-three":
         return (
@@ -108,12 +110,12 @@ const PostDetail: FC<PostType> = ({ post }) => {
             </div>
           </div>
           <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-           {/* @ts-ignore */}
+          {/* map over content children to determine obj type */}
+          {/* @ts-ignore */}
           {post.content.raw.children.map((typeObj, index) => {
             const children: ContentType = typeObj.children.map((item, itemindex) =>
               getContentFragment(itemindex, item.text, item)
             );
-
             return getContentFragment(index, children, typeObj, typeObj.type);
           })}
         </div>

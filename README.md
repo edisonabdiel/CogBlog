@@ -1,6 +1,6 @@
 <h1 align="center">CogBlog</h1>
 
-<img width="1436" alt="Screenshot 2021-11-10 at 16 27 26" src="https://user-images.githubusercontent.com/43752457/141142004-55c590c9-8601-4cbc-85b8-e05b40818a68.png">
+<img width="1436" alt="Screenshot 2021-11-14 at 15 38 58" src="https://user-images.githubusercontent.com/43752457/141685864-5e5936af-42f0-4155-a951-ba7f8897e82d.png">
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -9,7 +9,8 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
-    <li><a href="#why-react">Why Like This?</a></li>
+    <li><a href="#design-reasoning">Design Reasoning</a></li>
+    <li><a href="#challenges">Challenges</a></li>
     <li><a href="#getting-stsrted">Getting Started</a></li>
   </ol>
 </details>
@@ -51,15 +52,21 @@ CogBlog is a modern and fully fuctional blog for fictional characters who are al
 - next-themes
 - react-multi-carousel
 
-## Why Like This?
+## Design Reasoning
 
 The app was initialised completely from scratch in order to ensure a smooth integration between React - Next - TypeScript - TailwindCSS. 
 Also built with a GraphQL API to allow for a more dynamic and scalable experience which integrates perfectly with the GraphCMS API. 
 
+Components were built in a way that allows for a more dynamic and scalable experience which integrates perfectly with the GraphCMS API. 
+
 The UI is meant to be minimalistic yet engaging and intuitive was built using SASS for global styles and TailwindCSS to allow grat control and autonomy over the layout of the app 
 and also the design and feel of the elements within it.
 
-<p>all characters and posts are fictional and used for demo porpuses only</p>
+<p>all authors and posts are fictional and used for demo porpuses only</p>
+
+## Challenges
+
+Setting up the Post markup in PostDetail was particularly challenging as looping through every single type of content to subsequently add its respective styling was needed in order to display it as semantically as possible. Used a combination of map, if and switch statements to achieve this.
 
 ## Getting Started
 
@@ -90,9 +97,9 @@ yarn build
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/comments). 
-This endpoint can be edited in `pages/api/comments/index.ts`.
+ ### Hosted on
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  [![Build Status](https://travis-ci.com/cogblog/cogblog.svg?branch=master)](https://travis-ci.com/cogblog/cogblog)
+  [Vercel](https://vercel.com/cogblog)
 
 <h4 align="center">Made with loads of ❤️‍🔥</h4>
