@@ -98,8 +98,7 @@ yarn build
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
  ### Hosted on
-
-  [![Build Status](https://travis-ci.com/cogblog/cogblog.svg?branch=master)](https://travis-ci.com/cogblog/cogblog)
+ 
   [Vercel](https://vercel.com/cogblog)
 
 <h4 align="center">Made with loads of ❤️‍🔥</h4>

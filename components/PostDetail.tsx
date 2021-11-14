@@ -27,7 +27,6 @@ const PostDetail: FC<PostType> = ({ post }) => {
         modifiedText = <u key={index}>{text}</u>;
       }
     }
-     console.log(obj)
    //checks content type and returns the appropriate element/component
     switch (type) {
       case "heading-three":

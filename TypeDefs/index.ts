@@ -60,6 +60,7 @@ export interface CommentType {
     email: string;
     comment?: string;
     storeData?: any;
+    createdAt?: string;
 }
 
 export interface ContentType {
