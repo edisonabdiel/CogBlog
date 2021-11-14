@@ -20,7 +20,7 @@ const PostWidget: FC<{categories?: string[], slug?: string}> = ({ categories, sl
         setRelatedPosts(result);
       });
     }
-  }, [slug]);
+  }, [slug, categories]);
 
   return (
     <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-8 pb-12 mb-8">

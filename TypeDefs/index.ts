@@ -4,16 +4,15 @@ export interface PostsType {
     [x: string]: any;
     title?: string;
     excerpt?: string;
-    content?: string,
-    slug?: string,
-    featuredImage?: {url: string},
-    featuredPost?: boolean,
-    author?: AuthorType,
-    categories?: string[],
+    content?: string;
+    slug?: string;
+    featuredImage?: { url: string };
+    featuredPost?: boolean;
+    author?: AuthorType;
+    categories?: string[];
 };
 
 export interface AuthorType {
-    [x: string]: any;
     name: string,
     bio?: string,
     photo?: {url: string},
@@ -44,9 +43,9 @@ export interface ServicesType {
 };
 
 export interface PostWidgetType {
-    categories?: CategoryType[] | null;
-    category?: string | null;
-    slug: string;
+    categories?: CategoryType[];
+    category?: string;
+    slug?: string;
 }
 
 export interface PostType {
@@ -57,7 +56,6 @@ export interface PostType {
 }
 
 export interface CommentType {
-    [x: string]: any;
     name: string;
     email: string;
     comment?: string;
@@ -65,7 +63,6 @@ export interface CommentType {
 }
 
 export interface ContentType {
-    [x: string]: any;
     index?: Key;
     text?: {string: string};
     obj?: any;
@@ -78,13 +75,10 @@ export type ContentFuncType = (content: ContentType) => any; {
 }
 
 export interface AdjacentPostType {
-    [x: string]: any;
     post: PostsType;
     position: string;
 }
 
 export interface FeaturedPostType {
-    [x: string]: any;
-    post?: PostsType;
-
+    post: PostsType;
  }

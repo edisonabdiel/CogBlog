@@ -9,8 +9,6 @@ import Image from "next/image";
 //Utilities
 import { grpahCMSImageLoader } from "../util";
 
-//TODO
-
 const PostDetail: FC<PostType> = ({ post }) => {
   const getContentFragment = (index, text, obj, type?) => {
     let modifiedText = text;
@@ -29,7 +27,6 @@ const PostDetail: FC<PostType> = ({ post }) => {
       }
     }
    
-
     switch (type) {
       case "heading-three":
         return (
