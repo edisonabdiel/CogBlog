@@ -5,8 +5,8 @@ import { CommentType } from '../TypeDefs';
 
 const CommentsForm: FC<{slug: string, formData?: CommentType}> = ({ slug }) => {
   const [error, setError] = useState(false);
-  const [localStorage, setLocalStorage] = useState(null);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [localStorage, setLocalStorage] = useState<Storage>(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
   const [formData, setFormData] = useState<CommentType>({ name: null, email: null, comment: null, storeData: false });
   //Stores comment-user data in local storage
   useEffect(() => {
