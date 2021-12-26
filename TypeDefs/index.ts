@@ -19,20 +19,17 @@ export interface AuthorType {
 };
 
 export interface CategoriesType {
-    [x: string]: any;
     name?: string,
     slug?: string,
 };
 
 export interface CategoryType {
-    [x: string]: any;
     name: string;
     slug: string;
     categories?: {category: CategoriesType} | string[];
 };
 
 export interface ServicesType {
-    [x: string]: any;
     author: AuthorType;
     categories: CategoriesType[];
     createdAt: string;

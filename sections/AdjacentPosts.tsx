@@ -3,6 +3,7 @@ import React, { FC , useState, useEffect } from 'react';
 import { AdjacentPostCard } from '../components';
 //Services
 import { getAdjacentPosts } from '../services';
+// Custom hook
 
 const AdjacentPosts: FC<{ createdAt: string, slug: string}> = ({ createdAt, slug }) => {
   const [adjacentPost, setAdjacentPost] = useState(null);
