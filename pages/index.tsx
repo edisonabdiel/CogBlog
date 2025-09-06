@@ -15,8 +15,8 @@ const Home: NextPage<{ posts: PostsType[] }> = ({ posts }) => {
       <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
-          {posts.map((post: PostsType) => (
-            <PostCard post={post} key={post.title} />
+          {posts.map((post: PostsType, index: number) => (
+            <PostCard post={post} key={post?.node?.slug || `post-${index}`} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">

@@ -13,7 +13,7 @@ const Comments: FC<{slug: string, comments?: CommentType}> = ({ slug }) => {
     getComments(slug).then((result) => {
       setComments(result);
     });
-  }, []);
+  }, [slug]);
 
   return (
     <>
