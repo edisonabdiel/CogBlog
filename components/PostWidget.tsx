@@ -1,9 +1,8 @@
 import React, { useState, useEffect, FC } from 'react';
 import Image from 'next/image';
-import moment from 'moment';
 import Link from 'next/link';
 
-import { grpahCMSImageLoader } from '../util';
+import { grpahCMSImageLoader, formatDate } from '../util';
 import { getSimilarPosts, getRecentPosts } from '../services';
 import { PostsType } from '../TypeDefs';
 
@@ -41,13 +40,11 @@ const PostWidget: FC<{categories?: string[], slug?: string}> = ({ categories, sl
             />
           </div>
           <div className="flex-grow ml-4">
-            <Link href={`/post/${post.slug}`} passHref>
-              <a className="text-lg font-thin transition duration-500 text-center mb-7 cursor-pointer hover:text-purple-400 ease-in-out">
-                {post.title}
-              </a>
+            <Link href={`/post/${post.slug}`} className="text-lg font-thin transition duration-500 text-center mb-7 cursor-pointer hover:text-purple-400 ease-in-out">
+              {post.title}
             </Link>
             <p className="text-sm text-gray-600">
-              {moment(post.createdAt).format("MMMM Do YYYY")}
+              {formatDate(post.createdAt, "MMMM Do YYYY")}
             </p>
           </div>
         </div>

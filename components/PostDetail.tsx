@@ -1,13 +1,11 @@
 import React, { FC, Fragment } from "react";
 //Icons
 import { GiDeathNote } from "react-icons/gi";
-//Middleware
-import moment from "moment";
 import { ContentType, PostType } from "../TypeDefs";
 //Next Components
 import Image from "next/image";
 //Utilities
-import { grpahCMSImageLoader } from "../util";
+import { grpahCMSImageLoader, formatDate } from "../util";
 
 const PostDetail: FC<PostType> = ({ post }) => {
   const getContentFragment = (index, text, obj, type?) => {
@@ -79,8 +77,8 @@ const PostDetail: FC<PostType> = ({ post }) => {
             alt={post.author.name}
             unoptimized
             loader={grpahCMSImageLoader}
+            fill
             className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
-            layout="fill"
           />
         </div>
         <div className="px-4 lg:px-0">
@@ -104,7 +102,7 @@ const PostDetail: FC<PostType> = ({ post }) => {
             </div>
             <div className="font-thin text-lg text-gray-600">
               <span className="align-middle">
-                {moment(post.createdAt).format("MMM DD, YYYY")}
+                {formatDate(post.createdAt, "MMM DD, YYYY")}
               </span>
             </div>
           </div>
