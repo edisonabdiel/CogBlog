@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../../components';
 import { getPosts, getPostDetails } from '../../services';
 import { AdjacentPosts } from '../../sections';
-import { PostType } from '../../TypeDefs';
+import { PostType, PostsType } from '../../TypeDefs';
 
-const PostDetails: FC<PostType> = ({ post }) => {
+const PostDetails: FC<{post: PostsType}> = ({ post }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -38,7 +38,7 @@ const PostDetails: FC<PostType> = ({ post }) => {
 export default PostDetails;
 
 // Fetch data at build time
-export async function getStaticProps({ params }): Promise<{props: {post: PostType} }> {
+export async function getStaticProps({ params }): Promise<{props: {post: PostsType} }> {
   const data = await getPostDetails(params.slug);
   return {
     props: {
@@ -49,7 +49,7 @@ export async function getStaticProps({ params }): Promise<{props: {post: PostTyp
 
 // Specify dynamic routes to pre-render pages based on data.
 // The HTML is generated at build time and will be reused on each request.
-export async function getStaticPaths(): Promise<{ paths: string[]; fallback: boolean; }> {
+export async function getStaticPaths(): Promise<{ paths: Array<{params: {slug: string}}>; fallback: boolean; }> {
   const posts = await getPosts();
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),

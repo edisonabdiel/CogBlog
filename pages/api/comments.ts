@@ -2,7 +2,9 @@ import { GraphQLClient, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-export default async function asynchandler(req, res) {
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function asynchandler(req: NextApiRequest, res: NextApiResponse) {
   const graphQLClient = new GraphQLClient((graphqlAPI), {
     headers: {
       authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,

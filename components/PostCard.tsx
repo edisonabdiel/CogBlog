@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 //Types
-import { PostsType, PostType } from "../TypeDefs";
+import { PostsType } from "../TypeDefs";
 //Next modules
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +11,13 @@ import moment from "moment";
 //Uitilities
 import { grpahCMSImageLoader } from '../util'
 
-const PostCard: FC<PostType> = ({ post }) => {
-  const data: PostsType = post?.node;
+interface PostCardProps {
+  post: PostsType | { node: PostsType };
+}
+
+const PostCard: FC<PostCardProps> = ({ post }) => {
+  // Handle both direct post and post with node structure
+  const data: PostsType = 'node' in post ? post.node : post;
 
   return (
     <div className="bg-black bg-opacity-25 shadow-xl rounded-lg p-0 lg:p-8 pb-12 mb-8">

@@ -9,14 +9,14 @@ import { PostCard, Categories, PostWidget } from "../components";
 // Data
 import { getPosts } from "../services";
 
-const Home: NextPage<{ posts: PostsType[] }> = ({ posts }) => {
+const Home: NextPage<{ posts: Array<{ node: PostsType }> }> = ({ posts }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
-          {posts.map((post: PostsType, index: number) => (
-            <PostCard post={post} key={post?.node?.slug || `post-${index}`} />
+          {posts.map((post: { node: PostsType }, index: number) => (
+            <PostCard post={post.node} key={post?.node?.slug || `post-${index}`} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
@@ -30,7 +30,7 @@ const Home: NextPage<{ posts: PostsType[] }> = ({ posts }) => {
   );
 };
 
-export async function getStaticProps(): Promise<{ props: { posts: PostsType[] } }> {
+export async function getStaticProps(): Promise<{ props: { posts: Array<{ node: PostsType }> } }> {
   const posts = (await getPosts()) || [];
   return {
     props: {

@@ -8,7 +8,7 @@ import { getSimilarPosts, getRecentPosts } from '../services';
 import { PostsType } from '../TypeDefs';
 
 const PostWidget: FC<{categories?: string[], slug?: string}> = ({ categories, slug }) => {
-  const [relatedPosts, setRelatedPosts] = useState([]);
+  const [relatedPosts, setRelatedPosts] = useState<PostsType[]>([]);
 
   useEffect(() => {
     if (slug) {
@@ -47,7 +47,7 @@ const PostWidget: FC<{categories?: string[], slug?: string}> = ({ categories, sl
               </a>
             </Link>
             <p className="text-sm text-gray-600">
-              {moment(post.date).format("MMMM Do YYYY")}
+              {moment(post.createdAt).format("MMMM Do YYYY")}
             </p>
           </div>
         </div>

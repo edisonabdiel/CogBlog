@@ -1,15 +1,46 @@
 import { Key } from "react";
 
+// API Response Types
+export interface APIResponse<T> {
+    data: T;
+    error?: string;
+    message?: string;
+}
+
+export interface GraphQLResponse<T> {
+    data: T;
+    errors?: Array<{
+        message: string;
+        locations?: Array<{
+            line: number;
+            column: number;
+        }>;
+        path?: string[];
+    }>;
+}
+
+export interface PostsConnection {
+    postsConnection: {
+        edges: Array<{
+            cursor: string;
+            node: PostsType;
+        }>;
+    };
+}
+
 export interface PostsType {
-    [x: string]: any;
     title?: string;
     excerpt?: string;
-    content?: string;
+    content?: {
+        raw?: any;
+    };
     slug?: string;
     featuredImage?: { url: string };
     featuredPost?: boolean;
     author?: AuthorType;
-    categories?: string[];
+    categories?: CategoriesType[];
+    createdAt?: string;
+    id?: string;
 };
 
 export interface AuthorType {
@@ -56,21 +87,20 @@ export interface CommentType {
     name: string;
     email: string;
     comment?: string;
-    storeData?: any;
+    storeData?: boolean;
     createdAt?: string;
+    id?: string;
 }
 
 export interface ContentType {
     index?: Key;
-    text?: {string: string};
-    obj?: any;
-    type?: string | undefined;
-    (someArg: string): any | void;
+    text?: string;
+    children?: ContentType[];
+    type?: string;
+    raw?: any;
 }
 
-export type ContentFuncType = (content: ContentType) => any; {
-
-}
+export type ContentFuncType = (content: ContentType) => any;
 
 export interface AdjacentPostType {
     post: PostsType;

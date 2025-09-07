@@ -7,7 +7,7 @@ import { FeaturedPostCard } from '../components';
 //Services
 import { getFeaturedPosts } from '../services';
 //Types
-import { FeaturedPostType } from '../TypeDefs'
+import { PostsType } from '../TypeDefs'
 
 const responsive = {
   superLargeDesktop: {
@@ -29,7 +29,7 @@ const responsive = {
 };
 
 const FeaturedPosts: FC = () => {
-  const [featuredPosts, setFeaturedPosts] = useState<FeaturedPostType[]>([]);
+  const [featuredPosts, setFeaturedPosts] = useState<PostsType[]>([]);
   const [dataLoaded, setDataLoaded] = useState<boolean>(false);
 
   useEffect(() => {

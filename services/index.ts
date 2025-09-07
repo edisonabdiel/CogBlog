@@ -1,5 +1,5 @@
 import { request, gql } from 'graphql-request';
-import { PostsType } from '../TypeDefs';
+import { PostsType, PostsConnection, CategoriesType, CommentType } from '../TypeDefs';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -35,7 +35,7 @@ export const getPosts = async () => {
     }
   `;
 
-  const result = await request<PostsType>(graphqlAPI, query);
+  const result = await request<PostsConnection>(graphqlAPI, query);
 
   return result.postsConnection.edges;
 };
@@ -50,7 +50,7 @@ export const getCategories = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query) as any;
+  const result = await request<{ categories: CategoriesType[] }>(graphqlAPI, query);
 
   return result.categories;
 };
@@ -84,7 +84,7 @@ export const getPostDetails = async (slug: string) => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, { slug }) as any;
+  const result = await request<{ post: PostsType }>(graphqlAPI, query, { slug });
 
   return result.post;
 };
@@ -105,7 +105,7 @@ export const getSimilarPosts = async (categories: string[], slug: string) => {
       }
     }
   `;
-  const result = await request(graphqlAPI, query, { slug, categories }) as any;
+  const result = await request<{ posts: PostsType[] }>(graphqlAPI, query, { slug, categories });
 
   return result.posts;
 };
@@ -140,7 +140,7 @@ export const getAdjacentPosts = async (createdAt: string, slug: string) => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, { slug, createdAt }) as any;
+  const result = await request<{ next: PostsType[]; previous: PostsType[] }>(graphqlAPI, query, { slug, createdAt });
 
   return { next: result.next[0], previous: result.previous[0] };
 };
@@ -177,7 +177,7 @@ export const getCategoryPost = async (slug: string) => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, { slug }) as any;
+  const result = await request<PostsConnection>(graphqlAPI, query, { slug });
 
   return result.postsConnection.edges;
 };
@@ -202,7 +202,7 @@ export const getFeaturedPosts = async () => {
     }   
   `;
 
-  const result = await request(graphqlAPI, query) as any;
+  const result = await request<{ posts: PostsType[] }>(graphqlAPI, query);
 
   return result.posts;
 };
@@ -230,7 +230,7 @@ export const getComments = async (slug: string) => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, { slug }) as any;
+  const result = await request<{ comments: CommentType[] }>(graphqlAPI, query, { slug });
 
   return result.comments;
 };
@@ -251,7 +251,7 @@ export const getRecentPosts = async () => {
       }
     }
   `;
-  const result = await request(graphqlAPI, query) as any;
+  const result = await request<{ posts: PostsType[] }>(graphqlAPI, query);
 
   return result.posts;
 };
